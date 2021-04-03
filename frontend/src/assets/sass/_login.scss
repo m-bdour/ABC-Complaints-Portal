@@ -1,0 +1,56 @@
+.login-page {
+    min-height: 100vh;
+
+
+    .Login {
+        width: 30rem;
+        max-width: 85vw;
+        padding: 3rem;
+        border-radius: 5px;
+        background-color: white;
+        color: black;
+        box-shadow: 0 2px 40px 0 rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+
+
+        .head {
+            font-size: 1.3rem;
+            font-weight: bold;
+
+            p {
+                margin: 0;
+            }
+        }
+
+        .Form-group {
+            margin-bottom: 1.5rem;
+
+            .label {
+                font-size: 1rem;
+                font-weight: bold;
+            }
+
+            input {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                padding: .75rem 1.5rem .6rem 1rem;
+                min-height: 3rem;
+                width: 100%;
+                background-color: white;
+                font-size: 1rem;
+                color: inherit;
+                border: 1px solid #bbb;
+                border-radius: 3px;
+            }
+
+
+        }
+
+        .form-check {
+            margin-bottom: 1.5rem;
+        }
+
+    }
+}
