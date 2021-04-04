@@ -1,0 +1,4 @@
+{
+    "mongoURI" : "mongodb+srv://mhmdPwC:mhmdPwC@cluster0.akb6r.mongodb.net/PwC?retryWrites=true&w=majority",
+    "jwtSecret" : "HakonaMatata"
+}

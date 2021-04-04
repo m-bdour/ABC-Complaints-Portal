@@ -6,16 +6,16 @@ import { getComplaints, deleteComplaint, updateComplaint } from '../../actions/c
 
 const AdminDashboard = ({ getComplaints, complaint: { complaints }, deleteComplaint, updateComplaint }) => {
 
-    useEffect(() => {
-        getComplaints();
-    }, [getComplaints, complaints]);
-
+    
     const [edit, setedit] = useState('');
     const [formData, setFormData] = useState({
         notes: "",
         status: ""
     });
-
+    
+    useEffect(() => {
+        getComplaints();
+    }, [getComplaints , edit]);
     const { notes, status } = formData;
 
     const onChange = e =>
@@ -24,13 +24,13 @@ const AdminDashboard = ({ getComplaints, complaint: { complaints }, deleteCompla
     const onSubmit = async e => {
         e.preventDefault();
         window.scrollTo(0, 0);
-        setedit("");
         const id = edit;
         await updateComplaint(id, formData);
         setFormData({
             notes: "",
             status: ""
         });
+        setedit("");
     }
 
 

@@ -5,8 +5,8 @@ import {
 } from '../actions/types';
 
 const initialState = {
-  users: [],
-  user: null,
+  accounts: [],
+  account: null,
   error: {}
 };
 
@@ -15,12 +15,16 @@ function userReducer(state = initialState, action) {
     type,
     payload
   } = action;
-
+  console.log('inter reducer');
+  console.log(type);
+  console.log('inter action');
+  console.log(action);
   switch (type) {
     case GET_USERS:
+
       return {
         ...state,
-        complaints: payload
+        accounts: payload
       };
 
     case ADMIN_ERROR:
@@ -31,11 +35,11 @@ function userReducer(state = initialState, action) {
     case UPDATE_ROLE:
       return {
         ...state,
-        users: state.users.map((user) =>
-          user._id === payload.id ? {
-            ...user,
+        accounts: state.accounts.map((account) =>
+        account._id === payload.id ? {
+            ...account,
             role: payload.role
-          } : user
+          } : account
         ),
       };
     default:

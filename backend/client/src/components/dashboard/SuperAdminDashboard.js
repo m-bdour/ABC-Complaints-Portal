@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getusers, updaterole } from '../../actions/superAdmin';
 
-
-const AdminDashboard = ({ getusers, user: { users }, updaterole }) => {
+const AdminDashboard = ({ getusers, account: { accounts }, updaterole }) => {
 
     useEffect(() => {
         getusers();
-    }, [getusers, users]);
+    }, [getusers, accounts]);
 
     const [edit, setedit] = useState('');
     const [formData, setFormData] = useState({
@@ -33,13 +32,13 @@ const AdminDashboard = ({ getusers, user: { users }, updaterole }) => {
 
     return (
         <Fragment>
-            {users.map((user) => (
+            {accounts.map((account) => (
 
-                edit === user._id ?
+                edit === account._id ?
                     <div className="card mb-3">
                         <div className="card-body">
-                            <h5 className="card-title">name: {user.name} </h5>
-                            <h5 className="card-title">email: {user.email} </h5>
+                            <h5 className="card-title">name: {account.name} </h5>
+                            <h5 className="card-title">email: {account.email} </h5>
                             <hr />
                             <form onSubmit={onSubmit}>
                                 <div style={{ display: 'flex', alignItems: "center" }}>
@@ -59,11 +58,11 @@ const AdminDashboard = ({ getusers, user: { users }, updaterole }) => {
                     :
                     <div className="card mb-3">
                         <div className="card-body">
-                            <h5 className="card-title">name: {user.name} </h5>
-                            <h5 className="card-title">email: {user.email} </h5>
-                            <h5 className="card-title">role: {user.role} </h5>
+                            <h5 className="card-title">name: {account.name} </h5>
+                            <h5 className="card-title">email: {account.email} </h5>
+                            <h5 className="card-title">role: {account.role} </h5>
                             <hr />
-                            <button onClick={() => setedit(user._id)} className="btn btn-info float-right  mr-3">edit</button>
+                            <button onClick={() => setedit(account._id)} className="btn btn-info float-right  mr-3">edit</button>
                         </div>
                     </div>
             ))}
@@ -74,11 +73,11 @@ const AdminDashboard = ({ getusers, user: { users }, updaterole }) => {
 AdminDashboard.propTypes = {
     getusers: PropTypes.func.isRequired,
     updaterole: PropTypes.func.isRequired,
-    user: PropTypes.object.isRequired
+    account: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => ({
-    user: state.user
+    account: state.account
 });
 
 
