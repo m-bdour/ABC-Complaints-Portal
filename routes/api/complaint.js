@@ -112,10 +112,14 @@ router.delete('/:id', [auth, checkObjectId('id')], async (req, res) => {
     }
 
     // Check user
+    const admin = await User.findById(req.user.id);
     if (complaint.user.toString() !== req.user.id) {
-      return res.status(401).json({
-        msg: 'User not authorized'
-      });
+      if (admin.role !== 'admin') {
+
+        return res.status(401).json({
+          msg: 'User not authorized'
+        });
+      }
     }
 
     await complaint.remove();

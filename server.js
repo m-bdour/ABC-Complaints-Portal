@@ -14,6 +14,8 @@ app.use(express.json());
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/complaint', require('./routes/api/complaint'));
+app.use('/api/admin', require('./routes/api/admin'));
+
 
 const PORT = 5000;
 

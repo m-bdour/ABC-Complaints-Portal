@@ -6,16 +6,16 @@ import { getComplaints, deleteComplaint, updateComplaint } from '../../actions/c
 
 const AdminDashboard = ({ getComplaints, complaint: { complaints }, deleteComplaint, updateComplaint }) => {
 
-    
+
     const [edit, setedit] = useState('');
     const [formData, setFormData] = useState({
         notes: "",
         status: ""
     });
-    
+
     useEffect(() => {
         getComplaints();
-    }, [getComplaints , edit]);
+    }, [getComplaints, edit]);
     const { notes, status } = formData;
 
     const onChange = e =>
@@ -62,8 +62,8 @@ const AdminDashboard = ({ getComplaints, complaint: { complaints }, deleteCompla
                                         <option value='dismissed' >dismissed</option>
                                     </select>
                                 </div>
-                                <button onClick={() => setedit("")} className="btn btn-info float-right">Cancel</button>
-                                <button type="submit" class="btn btn-primary float-right mr-3">Submit</button>
+                                <button onClick={() => setedit("")} className="btn btn-warning text-dark float-right">Cancel</button>
+                                <button type="submit" class="btn btn-primary float-right mr-3">Done</button>
                             </form>
                         </div>
                     </div>

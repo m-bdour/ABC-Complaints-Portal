@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
@@ -22,6 +23,8 @@ const store = createStore(
 let currentState = store.getState();
 
 store.subscribe(() => {
+
+
   // keep track of the previous and current state to compare changes
   let previousState = currentState;
   currentState = store.getState();

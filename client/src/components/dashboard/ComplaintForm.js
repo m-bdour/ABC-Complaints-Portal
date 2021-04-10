@@ -66,7 +66,7 @@ const ComplaintForm = ({ addComplaint, setAlert }) => {
                         <input type="checkbox" required value="check" class="form-check-input" />
                         <label class="form-check-label">I agree on Privacy Policy</label>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Done</button>
 
                 </form>
             </div>

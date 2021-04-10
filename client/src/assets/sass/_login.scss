@@ -1,6 +1,5 @@
 .login-page {
-    min-height: 100vh;
-
+    min-height: calc(100vh - 60px);
 
     .Login {
         width: 30rem;
